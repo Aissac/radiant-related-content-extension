@@ -48,7 +48,7 @@
 	  
 	  addRelatedPage: function(element){
 	    id = element.id;
-	    title = element.down('span.title').innerHTML;
+	    title = element.down().innerHTML;
 	    $('related_content').value = '';
 	    RelatedContent.add(id, title);
 	  }
