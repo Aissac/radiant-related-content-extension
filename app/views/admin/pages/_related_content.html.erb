@@ -1,18 +1,21 @@
-<div id="related_content_wrapper" class="clearfix"> 
-  <label for="related_content">Related content</label>
-  <%= text_field_tag "related_content" %>
-  <ol id="related_content_container">
-  <% @page.related_pages.each do |related| %>
-    <li class="related_page" id="related_<%= related.id %>">
-      <img src="/images/admin/reorder.png" alt="reorder" class="reorder" />
-      <%=related.title%>
-      <%= link_to_function '<img src="/images/admin/minus.png" alt="Delete" />', "RelatedContent.remove('#{related.id}');", :confirm => "Are you sure you want to remove this related page?" %>
-    </li>
-  <% end %>
-  </ol>
-  <p id="deleted" class="related_notice" style="display:none;">Removed related content will be deleted when you save this page.</p>
-  <p id="added" class="related_notice" style="display:none;">New added related content will be saved when you save this page.</p>
+<div id="related_content_wrapper">
+  <div id="related-content">
+    <label for="related_content">Related content</label>
+    <%= text_field_tag "related_content" %>
+    <ol id="related_content_container">
+    <% @page.related_pages.each do |related| %>
+      <li class="related_page" id="related_<%= related.id %>">
+        <img src="/images/admin/reorder.png" alt="reorder" class="reorder" />
+        <%=related.title%>
+        <%= link_to_function '<img src="/images/admin/minus.png" alt="Delete" />', "RelatedContent.remove('#{related.id}');", :confirm => "Are you sure you want to remove this related page?" %>
+      </li>
+    <% end %>
+    </ol>
+    <p id="deleted" class="related_notice" style="display:none;">Removed related content will be deleted when you save this page.</p>
+    <p id="added" class="related_notice" style="display:none;">New added related content will be saved when you save this page.</p>
+  </div>
 </div>
+
 <% content_for :page_scripts do %>
 	var RelatedContent = {
 		remove: function(id){

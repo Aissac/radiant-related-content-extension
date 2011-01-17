@@ -4,7 +4,7 @@ describe Admin::PagesController do
   dataset :users, :related_content
 
   before do
-    login_as :developer
+    login_as :designer
 
     @javascripts = %w(lowpro controls dragdrop)
     @stylesheets = ['admin/related_content']

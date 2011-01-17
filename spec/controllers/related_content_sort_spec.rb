@@ -4,7 +4,7 @@ describe Admin::PagesController do
   dataset :users, :related_content
 
   before(:each) do
-    login_as :developer
+    login_as :designer
     @page = pages(:first)
 
     @first = @page.outgoing_relations[0]

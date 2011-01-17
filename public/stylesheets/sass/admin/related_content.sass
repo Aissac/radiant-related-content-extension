@@ -1,0 +1,69 @@
+=clearfix
+  display: inline-block
+  &:after
+    content: "." 
+    height: 0
+    clear: both
+    visibility: hidden
+  * html &
+    height: 1px
+    
+=box-shadow(!x=1px, !y=1px, !blur=4px, !color=#666)
+  -webkit-box-shadow= !x !y !blur !color
+  -moz-box-shadow= !x !y !blur !color
+  box-shadow= !x !y !blur !color
+
+.clearfix
+  +clearfix
+  
+#related_content_wrapper
+  +clearfix
+  margin-top: 10px
+  width: 100%
+  color: #000
+  #related-content
+    +clearfix
+    padding: 20px
+    +box-shadow(2px, 2px, 3px, rgba(0,0,0,0.15))
+    background: url(../../images/admin/vertical_tan_gradient.png) top left repeat-x #f5f1e2
+    
+  label
+    float: left
+    font-weight: bold
+    font-size: 17px
+    margin-right: 10px
+  
+  input
+    float: left
+    margin-right: 10px
+  
+  ol
+    float: left
+    margin: 0 10px
+    padding: 0
+    
+p.related_notice
+  clear: both
+  margin-top: 10px
+
+p#deleted
+  color: red
+
+p#added
+  color: green
+
+.related_page
+  position: relative
+  padding-left: 17px
+  a
+    color: gray
+    margin-left: 10px
+    text-decoration: none
+
+div.auto_complete span.url
+  display: block
+  font-size: 75%
+  color: blue
+  
+li.related_page
+  margin: 0 0 5px 20px
